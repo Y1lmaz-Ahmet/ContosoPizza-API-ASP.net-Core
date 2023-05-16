@@ -33,7 +33,20 @@ namespace ContosoPizza_API_ASP.net_Core.Controllers
             return CreatedAtAction(nameof(Get), new { id = pizza.Id }, pizza);
         }
         // PUT action
+        [HttpPut("{id}")]
+        public IActionResult Update(int id,Pizza pizza)
+        {
+            if (id != pizza.Id)
+                return BadRequest();
 
+            var ExistingPizza = PizzaService.Get(id);
+            if (ExistingPizza == null)
+                return BadRequest();
+
+            PizzaService.Update(pizza);
+
+            return NoContent();
+        }
         // DELETE action
     }
 }
