@@ -30,7 +30,7 @@ namespace ContosoPizza_API_ASP.net_Core.Controllers
         public IActionResult Create(Pizza pizza)
         {
             PizzaService.Add(pizza);
-            return CreatedAtAction(nameof(Get) new { id = pizza.Id }, pizza);
+            return CreatedAtAction(nameof(Get), new { id = pizza.Id }, pizza);
         }
         // PUT action
 
