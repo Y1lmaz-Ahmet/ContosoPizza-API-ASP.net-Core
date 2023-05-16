@@ -50,3 +50,6 @@ To run the ContosoPizza API and test the endpoints:
 3. Open the project in your preferred IDE.
 4. Build and run the project.
 5. Use an HTTP client (e.g., Postman) to send requests to the API endpoints.
+
+## Picture of the project
+![Voorbeeldafbeelding](Images/ContosoPizza.png)
