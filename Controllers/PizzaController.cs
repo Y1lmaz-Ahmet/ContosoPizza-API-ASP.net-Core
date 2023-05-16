@@ -48,5 +48,16 @@ namespace ContosoPizza_API_ASP.net_Core.Controllers
             return NoContent();
         }
         // DELETE action
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var pizza = PizzaService.Get(id);
+            if (pizza == null)
+                return NotFound();
+
+            PizzaService.Delete(id);
+
+            return NoContent();
+        }
     }
 }
